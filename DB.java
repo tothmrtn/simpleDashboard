@@ -44,7 +44,7 @@ public class DB {
         }
 
 
-        // Create the whole UserDatabase DB if it's not exists
+        // Create the whole UserDatabase DB if not exists
         try {
             conn = DriverManager.getConnection(SERVER_URL, USERNAME, PASSWORD);
             createStatement = conn.createStatement();
