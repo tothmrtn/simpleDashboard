@@ -12,19 +12,19 @@ public class DashBoardForm extends JDialog implements ActionListener {
     public DashBoardForm(JFrame parent) {
         super(parent);
         setTitle("Dashboard");
+        lbAdmin.setText("Hi!");
         setContentPane(dashBoardPanel);
         setMinimumSize(new Dimension(500, 430));
         setModal(true);
         setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        lbAdmin.setText("Hi!");
-
         btnLogout.setFocusable(false);
         btnLogout.addActionListener(this);
 
         setVisible(true);
     }
+
 
 
     @Override
