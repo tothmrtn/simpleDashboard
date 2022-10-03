@@ -11,6 +11,7 @@ public class LoginForm extends JDialog implements ActionListener {
     private JPanel loginPanel;
 
     DB db = new DB();
+    User getUser;
 
     public LoginForm(JFrame parent) {
         super(parent);
@@ -44,10 +45,10 @@ public class LoginForm extends JDialog implements ActionListener {
             String email = txtEmail.getText();
             String password = String.valueOf(txtPassword.getPassword());
 
-            User getUser = db.getUser(email, password);
+            getUser = db.getUser(email, password);
 
             if(getUser != null) {
-                getUser.setName(getUser.getName());
+                System.out.println("User: " + getUser.getName());
                 dispose();
                 DashBoardForm dashboard = new DashBoardForm(null);
             }else{
