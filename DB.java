@@ -9,12 +9,13 @@ public class DB {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
+    User user = null;
+
     Connection conn = null;
     Statement createStatement = null;
     PreparedStatement preparedStatement = null;
     ResultSet rs = null;
 
-    User user = null;
 
     // DB - Creating Connection
     public DB() {
@@ -103,6 +104,7 @@ public class DB {
 
             if(rs.next()) {
                 user = new User();
+                user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
             }
